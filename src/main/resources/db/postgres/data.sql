@@ -51,3 +51,14 @@ INSERT INTO visits (pet_id, visit_date, description) SELECT 7, '2010-03-04', 'ra
 INSERT INTO visits (pet_id, visit_date, description) SELECT 8, '2011-03-04', 'rabies shot' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=2);
 INSERT INTO visits (pet_id, visit_date, description) SELECT 8, '2009-06-04', 'neutered' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=3);
 INSERT INTO visits (pet_id, visit_date, description) SELECT 7, '2008-09-04', 'spayed' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=4);
+INSERT INTO visits (pet_id, visit_date, description) SELECT 7, CURRENT_DATE + INTERVAL '3 days', 'annual checkup' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=5);
+INSERT INTO visits (pet_id, visit_date, description) SELECT 8, CURRENT_DATE + INTERVAL '7 days', 'vaccination' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=6);
+INSERT INTO visits (pet_id, visit_date, description) SELECT 9, CURRENT_DATE + INTERVAL '1 month', 'dental cleaning' WHERE NOT EXISTS (SELECT * FROM visits WHERE id=7);
+
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 1, 2, '2010-03-04' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=1);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 2, 2, '2011-03-04' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=2);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 3, 3, '2009-06-04' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=3);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 4, 3, '2008-09-04' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=4);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 5, 1, CURRENT_DATE + INTERVAL '3 days' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=5);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 6, 4, CURRENT_DATE + INTERVAL '7 days' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=6);
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) SELECT 7, 6, CURRENT_DATE + INTERVAL '1 month' WHERE NOT EXISTS (SELECT * FROM visit_assignments WHERE visit_id=7);

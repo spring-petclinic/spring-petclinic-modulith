@@ -13,4 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * The {@code vet} module manages veterinarians and their specialties.
+ * <p>
+ * It declares an explicit dependency on {@code owner} in order to listen to events
+ * published by the {@code owner}.
+ */
+@ApplicationModule(allowedDependencies = { "owner" })
 package org.springframework.samples.petclinic.vet;
+
+import org.springframework.modulith.ApplicationModule;

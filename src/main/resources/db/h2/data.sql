@@ -51,3 +51,14 @@ INSERT INTO visits VALUES (default, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (default, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (default, 8, '2013-01-03', 'neutered');
 INSERT INTO visits VALUES (default, 7, '2013-01-04', 'spayed');
+INSERT INTO visits VALUES (default, 7, DATEADD('DAY', 3, CURRENT_DATE), 'annual checkup');
+INSERT INTO visits VALUES (default, 8, DATEADD('DAY', 7, CURRENT_DATE), 'vaccination');
+INSERT INTO visits VALUES (default, 9, DATEADD('MONTH', 1, CURRENT_DATE), 'dental cleaning');
+
+INSERT INTO visit_assignments VALUES (1, 2, '2013-01-01');
+INSERT INTO visit_assignments VALUES (2, 2, '2013-01-02');
+INSERT INTO visit_assignments VALUES (3, 3, '2013-01-03');
+INSERT INTO visit_assignments VALUES (4, 3, '2013-01-04');
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) VALUES (5, 1, DATEADD('DAY', 3, CURRENT_DATE));
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) VALUES (6, 4, DATEADD('DAY', 7, CURRENT_DATE));
+INSERT INTO visit_assignments (visit_id, vet_id, visit_date) VALUES (7, 6, DATEADD('MONTH', 1, CURRENT_DATE));

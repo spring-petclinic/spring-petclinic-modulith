@@ -11,6 +11,7 @@
       <tr>
         <th th:text="#{name}">Name</th>
         <th th:text="#{specialties}">Specialties</th>
+        <th th:text="#{nextVisit}">Next Visit</th>
       </tr>
     </thead>
     <tbody>
@@ -20,9 +21,11 @@
           <span th:each="specialty : ${vet.specialties}" th:text="${specialty.name + ' '}" /> <span
             th:if="${vet.nrOfSpecialties == 0}" th:text="#{none}">none</span>
         </td>
+        <td th:text="${nextVisitByVetId[vet.id] ?: '-'}"></td>
       </tr>
     </tbody>
   </table>
+
   <div th:if="${totalPages > 1}">
     <span th:text="#{pages}">Pages:</span>
     <span>[</span>

@@ -4,3 +4,5 @@
 
 /gradlew        text eol=lf
 *.bat           text eol=crlf
+
+*.css linguist-generated=true

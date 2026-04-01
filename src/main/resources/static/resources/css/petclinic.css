@@ -9385,6 +9385,10 @@ table td.action-column {
 .logo {
   width: 200px; }
 
+.logo-modulith {
+  height: 40px;
+  width: auto; }
+
 .myspinner {
   animation-name: spinner;
   animation-duration: 2s;
