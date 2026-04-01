@@ -1,0 +1,4 @@
+org.springframework.aot.hint.RuntimeHintsRegistrar=\
+  org.springframework.samples.petclinic.system.internal.SystemRuntimeHints,\
+  org.springframework.samples.petclinic.owner.domain.OwnerRuntimeHints,\
+  org.springframework.samples.petclinic.vet.internal.VetRuntimeHints

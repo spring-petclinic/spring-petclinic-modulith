@@ -50,3 +50,9 @@ CREATE TABLE IF NOT EXISTS visits (
   description TEXT
 );
 CREATE INDEX ON visits (pet_id);
+
+CREATE TABLE IF NOT EXISTS visit_assignments (
+  visit_id   INT  NOT NULL PRIMARY KEY,
+  vet_id     INT  NOT NULL REFERENCES vets (id),
+  visit_date DATE NOT NULL
+);

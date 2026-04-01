@@ -29,6 +29,13 @@ ext.springJavaformatCheckstyleVersion = "0.0.47"
 ext.webjarsLocatorLiteVersion = "1.1.2"
 ext.webjarsFontawesomeVersion = "4.7.0"
 ext.webjarsBootstrapVersion = "5.3.8"
+ext.springModulithVersion = "2.0.5"
+
+dependencyManagement {
+  imports {
+    mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
+  }
+}
 
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-cache'
@@ -38,7 +45,11 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation 'javax.cache:cache-api'
   implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
-  runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
+  implementation 'org.springframework.modulith:spring-modulith-api'
+  implementation 'org.springframework.modulith:spring-modulith-events-api'
+  implementation 'org.springframework.modulith:spring-modulith-moments'
+  implementation 'org.springframework.modulith:spring-modulith-starter-jdbc'
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
   runtimeOnly "org.webjars:webjars-locator-lite:${webjarsLocatorLiteVersion}"
   runtimeOnly "org.webjars.npm:bootstrap:${webjarsBootstrapVersion}"
   runtimeOnly "org.webjars.npm:font-awesome:${webjarsFontawesomeVersion}"
@@ -46,6 +57,8 @@ dependencies {
   runtimeOnly 'com.h2database:h2'
   runtimeOnly 'com.mysql:mysql-connector-j'
   runtimeOnly 'org.postgresql:postgresql'
+  runtimeOnly 'org.springframework.modulith:spring-modulith-actuator'
+  runtimeOnly 'org.springframework.modulith:spring-modulith-runtime'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
   testImplementation 'org.springframework.boot:spring-boot-starter-restclient-test'
@@ -54,6 +67,9 @@ dependencies {
   testImplementation 'org.springframework.boot:spring-boot-docker-compose'
   testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
   testImplementation 'org.testcontainers:testcontainers-mysql'
+  testImplementation 'org.springframework.modulith:spring-modulith-junit'
+  testImplementation 'org.springframework.modulith:spring-modulith-docs'
+  testImplementation 'org.springframework.modulith:spring-modulith-starter-test'
   checkstyle "io.spring.javaformat:spring-javaformat-checkstyle:${springJavaformatCheckstyleVersion}"
   checkstyle "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
 }

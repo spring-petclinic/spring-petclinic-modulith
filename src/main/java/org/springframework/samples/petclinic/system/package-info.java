@@ -13,4 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * The {@code system} module provides cross-cutting infrastructure: caching, web
+ * configuration and error handling.
+ */
+@ApplicationModule
 package org.springframework.samples.petclinic.system;
+
+import org.springframework.modulith.ApplicationModule;
